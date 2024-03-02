@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="API Automation" verbose="1">
+    <test name="Books API Tests">
+        <classes>
+            <class name="BooksAPI.BooksAPITest"/>
+        </classes>
+    </test>
+</suite>
