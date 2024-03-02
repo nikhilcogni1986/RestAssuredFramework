@@ -1,0 +1,4 @@
+{
+  "AddBookEndpoint": "http://216.10.245.166",
+  "AddBookPostUrl": "/Library/Addbook.php"
+}
