@@ -1,5 +1,8 @@
 package BooksAPI;
 
+import net.datafaker.Faker;
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.HashMap;
 
 public class Payload
@@ -23,6 +26,17 @@ public class Payload
         payload.put("isbn", isbn);
         payload.put("aisle", aisle);
         payload.put("author", author);
+        return payload;
+    }
+
+    public static HashMap<String, Object> getBooksDataPayloadFromMap()
+    {
+        Faker faker = new Faker();
+        HashMap<String, Object> payload = new HashMap<>();
+        payload.put("name", faker.name().firstName());
+        payload.put("isbn", RandomStringUtils.randomAlphabetic(4));
+        payload.put("aisle", faker.number().digits(4));
+        payload.put("author", faker.name().lastName());
         return payload;
     }
 }
