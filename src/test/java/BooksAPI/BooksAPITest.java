@@ -4,7 +4,6 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 public class BooksAPITest extends BooksApi
@@ -12,7 +11,7 @@ public class BooksAPITest extends BooksApi
     @Test
     public void add_book_using_post() {
 
-        HashMap<String, Object> requestPayload = Payload.getBooksDataPayloadFromMap("Selenium Book","ccv","223","Rahul");
+        HashMap<String, Object> requestPayload = Payload.getBooksDataPayloadFromMap("Selenium Book","ccv","2113","Rahul");
         Response response = addBook(requestPayload);
         Assert.assertEquals(response.statusCode(),200);
     }
@@ -32,4 +31,13 @@ public class BooksAPITest extends BooksApi
         Response response = addBook(requestPayload);
         Assert.assertEquals(response.statusCode(),200);
     }
+
+//    @Test
+//    public void add_book_using_post_using_defaultvalues_fromPojo() {
+//
+//        Books requestPayload = new Books();
+//        Response response = addBook(requestPayload);
+//        Assert.assertEquals(response.statusCode(),200);
+//    }
+    
 }
