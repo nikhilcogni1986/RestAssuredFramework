@@ -39,4 +39,14 @@ public class Payload
         payload.put("author", faker.name().lastName());
         return payload;
     }
+
+    public static Books getBooksDataPayloadFromPojo()
+    {
+        Faker faker = new Faker();
+        return Books.builder()
+                .name(faker.name().firstName())
+                .isbn(RandomStringUtils.randomAlphabetic(4))
+                .aisle(faker.number().digits(4))
+                .author(faker.name().lastName()).build();
+    }
 }

@@ -25,4 +25,12 @@ public class BooksAPITest extends BooksApi
         Response response = addBook(requestPayload);
         Assert.assertEquals(response.statusCode(),200);
     }
+
+    @Test
+    public void add_book_using_post_using_pojo() throws IOException {
+
+        Books requestPayload = Payload.getBooksDataPayloadFromPojo();
+        Response response = addBook(requestPayload);
+        Assert.assertEquals(response.statusCode(),200);
+    }
 }

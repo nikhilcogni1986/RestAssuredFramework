@@ -12,4 +12,10 @@ public class BooksApi extends Base
         return  RestUtils.perform_post(Base.dataFromJsonFile.get("AddBookEndpoint"),
                 requestPayload,new HashMap<>(),Base.dataFromJsonFile.get("AddBookPostUrl"));
     }
+
+    public Response addBook(Books requestPayload)
+    {
+        return  RestUtils.perform_post(Base.dataFromJsonFile.get("AddBookEndpoint"),
+                requestPayload,new HashMap<>(),Base.dataFromJsonFile.get("AddBookPostUrl"));
+    }
 }
