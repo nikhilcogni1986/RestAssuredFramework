@@ -1,6 +1,5 @@
 package BooksAPI;
 
-import RestUtils.RestUtils;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,7 +10,7 @@ import java.util.HashMap;
 public class BooksAPITest extends BooksApi
 {
     @Test
-    public void add_book_using_post() throws IOException {
+    public void add_book_using_post() {
 
         HashMap<String, Object> requestPayload = Payload.getBooksDataPayloadFromMap("Selenium Book","ccv","223","Rahul");
         Response response = addBook(requestPayload);
@@ -19,7 +18,7 @@ public class BooksAPITest extends BooksApi
     }
 
     @Test
-    public void add_book_using_post_random_data() throws IOException {
+    public void add_book_using_post_random_data() {
 
         HashMap<String, Object> requestPayload = Payload.getBooksDataPayloadFromMap();
         Response response = addBook(requestPayload);
@@ -27,7 +26,7 @@ public class BooksAPITest extends BooksApi
     }
 
     @Test
-    public void add_book_using_post_using_pojo() throws IOException {
+    public void add_book_using_post_using_pojo() {
 
         Books requestPayload = Payload.getBooksDataPayloadFromPojo();
         Response response = addBook(requestPayload);
