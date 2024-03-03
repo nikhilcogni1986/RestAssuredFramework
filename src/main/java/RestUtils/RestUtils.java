@@ -27,14 +27,16 @@ public class RestUtils
         ExtentReportManager.logInfoDetails("Endpoint is: "+queryableRequestSpecification.getBaseUri());
         ExtentReportManager.logInfoDetails("Method is: "+queryableRequestSpecification.getMethod());
         ExtentReportManager.logInfoDetails("Headers are: "+queryableRequestSpecification.getHeaders().asList().toString());
-        ExtentReportManager.logInfoDetails("Request Body is: "+queryableRequestSpecification.getBody());
+        ExtentReportManager.logInfoDetails("Request Body is: ");
+        ExtentReportManager.logJson(queryableRequestSpecification.getBody());
     }
 
     private static void printResponseLogInReport(Response response)
     {
         ExtentReportManager.logInfoDetails("Response Status code: "+response.getStatusCode());
         ExtentReportManager.logInfoDetails("Response Headers are: "+response.getHeaders().asList().toString());
-        ExtentReportManager.logInfoDetails("Response Body: "+response.getBody());
+        ExtentReportManager.logInfoDetails("Response Body: ");
+        ExtentReportManager.logJson(response.getBody().prettyPrint());
     }
     public static Response perform_post(String endpoint, String requestPayload, HashMap<String, String> headers,
                                         String postUrl)
