@@ -14,7 +14,8 @@ public class Setup implements ITestListener
      public void onStart(ITestContext context)
      {
          String fileName = ExtentReportManager.getReportNameWithTimeStamp();
-         extentReports = ExtentReportManager.createInstance(fileName, "API Automation Report", "Test Execution Report");
+         String fullReportFilePath = System.getProperty("user.dir")+"\\reports\\"+fileName;
+         extentReports = ExtentReportManager.createInstance(fullReportFilePath, "API Automation Report", "Test Execution Report");
 
      }
 
